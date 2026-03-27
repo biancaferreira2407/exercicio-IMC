@@ -1,13 +1,9 @@
 :root {
-    --azul: #2563eb;
-    --azul-claro: #dbeafe;
+    --azul: #25bdeb;
+    --azul-claro: #d8e9ff;
     --branco: #ffffff;
     --cinza: #f3f4f6;
     --vermelho: #dc2626;
-}
-
-#labelDoInputP {
-    color: var(--vermelho);
 }
 
 body {
@@ -15,12 +11,12 @@ body {
     background-color: var(--branco);
     margin: 0;
     padding: 0;
-    background-color: #1e40af;
+    background-color: #db7cad;
 }
 
 header {
     background-color: var(--azul);
-    color: white;
+    color: rgb(255, 255, 255);
     text-align: center;
     padding: 15px;
     font-weight: bold;
@@ -63,8 +59,8 @@ input[type="number"] {
 }
 
 input[type="number"]:focus {
-    background-color: var(--azul-claro);
-    border-color: var(--azul);
+    background-color: solid #e5c2ff;
+    border-color: solid #53008e;
 }
 
 button {
