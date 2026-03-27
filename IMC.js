@@ -8,34 +8,33 @@ function funcaoCalcular() {
     let footer = document.getElementById("footer");
     let mensagem = document.getElementById("mensagem");
 
-    if (peso < 0 || altura < 0) {
+     if (peso < 2.5 || altura < 0.25) {
         footer.classList.add("erro");
-        mensagem.innerHTML = "peso e altura precisam ser números positivos";
+        mensagem.innerHTML = "peso e altura precisam ser números positivos válidos";
         document.getElementById("respIMC").innerHTML = "-";
-    }else if(peso = ""){
-        footer.classList.add("erro");
-        focus.getElementById("inputP")
-        document.getElementById("respIMC").innerHTML = "-";
-    } else if(peso = ""){
-        footer.classList.add("erro");
-        focus.getElementById("inputA")
-        document.getElementById("respIMC").innerHTML = "-";
-    }else {
+    } else if (!isNaN(peso) && isFinite(peso) && !isNaN(altura) && isFinite(altura)) {
         footer.classList.remove("erro");
         mensagem.innerHTML = "Cálculo realizado com sucesso";
+        if(IMC>40){
+            classifica="Obesidade grau III"
+        }else if(IMC>35){
+            classifica="Obesidade grau II"
+        }else if(IMC>30){
+            classifica="Obesidade grau I"
+        }else if(IMC>25){
+            classifica="Sobrepeso"
+        }else if(IMC>18.5){
+            classifica="Peso normal"
+        }else{
+            classifica="Abaixo do peso"
+        }
+    
+        document.getElementById("respIMC").innerHTML =IMC.toFixed(2) +";"
+        document.getElementById("respClass").innerHTML= classifica;
+    }else {
+        footer.classList.add("erro");
+        mensagem.innerHTML = "peso e altura precisam estar com valores numéricos";
+        document.getElementById("respIMC").innerHTML = "-";
     }
-    if(IMC<18,5){
-        classifica="Abaixo do peso"
-    }else if(IMC<25){
-        classifica="Peso normal"
-    }else if(IMC<30){
-        classifica="Sobrepeso"
-    }else if(IMC<35){
-        classifica="Obesidade grau I"
-    }else if(IMC<40){
-        classifica="Obesidade grau II"
-    }else{
-        classifica="Obesidade grau III"
-    }
-    document.getElementById("respIMC").innerHTML =IMC.toFixed(2) +";"+ classifica;
+
 }
